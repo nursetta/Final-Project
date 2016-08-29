@@ -1,0 +1,18 @@
+<!-- Expense-info Form -->
+
+<form class="expense-info" ng-submit="update()" ng-controller="BorrowerExpenseUpdateCtrl">
+
+    <input type="text" ng-model="newBorrower.expense_info.rent_expense" placeholder="Monthly Rent" /><br><br>
+    <input type="text" ng-model="newBorrower.expense_info.mortgage_pi" placeholder="Mortgage Principle and Interest" /><br><br>
+    <input type="text" ng-model="newBorrower.expense_info.other_mortgage_pi" placeholder="Other Mortgage Principle and Interest" /><br><br>
+    <input type="text" ng-model="newBorrower.expense_info.hazard_insurance" placeholder="Hazard Insurance" /><br><br>
+    <input type="text" ng-model="newBorrower.expense_info.real_estate_taxes" placeholder="Real Estate Taxes" /><br><br>
+    <input type="text" ng-model="newBorrower.expense_info.mortgage_insurance" placeholder="Mortgage Insurance" /><br><br>
+    <input type="text" ng-model="newBorrower.expense_info.hoa_dues" placeholder="HOA Dues" /><br><br>
+    <input type="text" ng-model="newBorrower.expense_info.other" placeholder="Other Monthly Expenses" /><br><br>
+
+    <input type="submit" id="submit" value="Submit" />
+
+</form>
+
+<!-- fix other in DB to say other_expense -->

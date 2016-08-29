@@ -1,0 +1,14 @@
+<!-- Employment-info Form -->
+
+<form class="employment-info" ng-submit="update()" ng-controller="BorrowerEmploymentUpdateCtrl">
+
+    <input type="text" ng-model="newBorrower.employment_info.employer_name" placeholder="Employer Name" /><br><br>
+    <input type="text" ng-model="newBorrower.employment_info.employer_address" placeholder="Employer Address" /><br><br>
+    <input type="text" ng-model="newBorrower.employment_info.self_employed" placeholder="Are you Self Employed?" /><br><br>
+    <input type="text" ng-model="newBorrower.employment_info.years_on_job" placeholder="Years on Job" /><br><br>
+    <input type="text" ng-model="newBorrower.employment_info.years_employed_in_profession" placeholder="Years Employed in Profession" /><br><br>
+    <input type="text" ng-model="newBorrower.employment_info.position_or_type_of_business" placeholder="Position or Type of Business" /><br><br>
+
+    <input type="submit" id="submit" value="Submit" />
+
+</form>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Qualifi</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/styles/style.css">
+    
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/borrowerController.js"></script>
+
+</head>
+
+<body ng-app="BorrowerInfo">
+
+<!-- Navbar Section -->
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> 
+      <h5 class="navbar-brand" id="qualifi" href="./">QUALIFi</h5>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="nav-button" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a class="nav-button" href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a class="nav-button" href="/borrowers"><span class="glyphicon glyphicon-user"></span> Borrower Profile</a></li>
+        <li><a class="nav-button" data-code="2b30a03995ec62f15bdc54e8428caa87" href="https://www.coinbase.com/checkouts/2b30a03995ec62f15bdc54e8428caa87" ><span class="glyphicon glyphicon-btc"></span> Leave a tip!</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div ng-view></div>
+
+</body>
+
+<!-- Footer Section -->
+  <section class="footer">
+    <ul class="footer-link-list text-center">
+      <li class="footer-link"><a target="_blank">Contact Us</a></li> &nbsp&nbsp | &nbsp&nbsp
+      <li class="footer-link"><a href="/#" target="_blank">FAQs</a></li> &nbsp&nbsp | &nbsp&nbsp
+      <li class="footer-link"><a href="/#" target="_blank">Calculators</a></li> &nbsp&nbsp | &nbsp&nbsp
+      <li class="footer-link"><a>About Us</a></li>
+    </ul>
+  </section>
+
+</html>

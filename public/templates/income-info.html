@@ -1,0 +1,17 @@
+<!-- Income-info Form -->
+
+<form class="income-info" ng-submit="update()" ng-controller="BorrowerIncomeUpdateCtrl">
+
+    <input type="text" ng-model="newBorrower.income_info.base_income" placeholder="Base Income" /><br><br>
+    <input type="text" ng-model="newBorrower.income_info.overtime_income" placeholder="Overtime Income" /><br><br>
+    <input type="text" ng-model="newBorrower.income_info.bonus_income" placeholder="Bonus Income" /><br><br>
+    <input type="text" ng-model="newBorrower.income_info.commision_income" placeholder="Commission Income" /><br><br>
+    <input type="text" ng-model="newBorrower.income_info.dividend_interest_income" placeholder="Dividend/Interest Income" /><br><br>
+    <input type="text" ng-model="newBorrower.income_info.net_rental_income" placeholder="Net Rental Income" /><br><br>
+    <input type="text" ng-model="newBorrower.income_info.other_income" placeholder="Other Income" /><br><br>
+
+    <input type="submit" id="submit" value="Submit" />
+
+</form>
+
+<!-- FIX COMMISION INCOME IN DB TO SAY  COMMISSION INCOME -->

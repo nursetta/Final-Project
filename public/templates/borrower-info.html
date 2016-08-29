@@ -1,0 +1,17 @@
+<!-- Borrower-info Form -->
+
+<form class="borrower-info" ng-submit="submit()" ng-controller="BorrowerCreateCtrl">
+
+    <input type="text" ng-model="newBorrower.borrower_info.first_name" placeholder="First Name" /><br><br>
+    <input type="text" ng-model="newBorrower.borrower_info.last_name" placeholder=" Last Name" /><br><br>
+    <input type="text" ng-model="newBorrower.borrower_info.phone_number" placeholder="Phone Number" /><br><br>
+    <input type="text" ng-model="newBorrower.borrower_info.date_of_birth" placeholder="Date of Birth" /><br><br>
+    <input type="text" ng-model="newBorrower.borrower_info.years_in_school" placeholder="Yrs in school" /><br><br>
+    <input type="text" ng-model="newBorrower.borrower_info.present_address" placeholder="Current Address" /><br><br>
+    <input type="text" ng-model="newBorrower.borrower_info.mailing_address" placeholder="Mailing Address" /><br><br>
+    <input type="text" ng-model="newBorrower.borrower_info.length_of_residency" placeholder="Length of Residency" /><br><br>
+    <input type="text" ng-model="newBorrower.borrower_info.former_address" placeholder="Former Address" /><br><br>
+
+    <input type="submit" id="submit" value="Submit" />
+
+</form>
