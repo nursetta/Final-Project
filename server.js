@@ -25,11 +25,11 @@ app.post('/api/borrower', function (req, res) {
 	var borrower = new db.Borrower(req.body);
 	console.log(borrower);
 	console.log(req.body);
-	console.log();
-		borrower.save(function(err) {
+		borrower.save(function(err, borrower) {
 	         if (err){
 	            return console.log("post error: " + err);
 	        }
+			res.json(borrower);
 	});
 });
 
@@ -49,8 +49,8 @@ app.put('/api/borrower/:id', function (req, res) {
 	var update = req.body;
 		db.Borrower.findOneAndUpdate({_id: borrowerId}, update, function(err, borrower){
 		if (err) { return console.log("update error: " + err); }
-		res.json(borrower);
 	});
+		// res.json(borrower);
 });
 
 

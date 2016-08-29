@@ -2,7 +2,8 @@ angular.module('BorrowerInfo')
 .config(function($routeProvider){
     $routeProvider
       .when('/', {
-        templateUrl: 'templates/home.html'
+        templateUrl: 'templates/home.html',
+        controller: 'ButtonClickCtrl'
       })
       .when('/borrower/:id', { 
 			  templateUrl: 'templates/borrowerShow.html',
@@ -34,6 +35,8 @@ angular.module('BorrowerInfo')
       });
 });
 
+// BORROWER INFO CONTROLERS //
+
 angular.module('BorrowerInfo')
  .factory('BorrowerService', function($resource){
     return $resource('/api/borrower/:id', null,
@@ -42,39 +45,50 @@ angular.module('BorrowerInfo')
     });
 });
 
-// angular.module('BorrowerInfo')
-//   .controller('BorrowerIndexCtrl', function($scope, BorrowerService){
-//     $scope.borrower= BorrowerService.query();
-//     console.log($scope.borrower);
-// });
+angular.module('BorrowerInfo')
+.controller('ButtonClickCtrl', function ($scope, BorrowerService, $routeParams) {
+   $scope.redirect = function() {
+      window.location.assign('/#/borrower-info');
+   };
+});   
+
+
+// BORROWER PROFILE CONTROLERS //
 
 angular.module('BorrowerInfo')
 .controller('BorrowerShowCtrl', function ($scope, BorrowerService, $routeParams) {
    $scope.borrower = BorrowerService.get({id: $routeParams.id});
    console.log($scope.borrower);
 
-        // $scope.delete = function() {
-        //   TodoService.delete({id: $routeParams.id});
-        //   console.log({id: $routeParams.id});
-        //   window.location.assign('/');
-        // };
+        $scope.delete = function() {
+          BorrowerService.delete({id: $routeParams.id});
+          console.log({id: $routeParams.id});
+          window.location.assign('/');
+        };
 });
 
+
+// BORROWER CREATE CONTROLLER //
+
 angular.module('BorrowerInfo')
-.controller('BorrowerCreateCtrl', function($scope, BorrowerService) {
+.controller('BorrowerCreateCtrl', function($scope, BorrowerService, $routeParams) {
       $scope.submit = {};
       $scope.submit = function() {
         console.log($scope.newBorrower);
-        BorrowerService.save($scope.newBorrower);
-        window.location.assign('/api/borrower');
-        };
+        BorrowerService.save($scope.newBorrower, function(borrower, headers) {
+            console.log(borrower);
+            window.location.assign('/#/employment-info/' + borrower._id);
+        });
+    };
 });
+
+// BORROWER UPDATE CONTROLLERS //
 
 angular.module('BorrowerInfo')
 .controller('BorrowerEmploymentUpdateCtrl', function ($scope, BorrowerService, $routeParams) {
   $scope.update = function() {
     BorrowerService.update({id: $routeParams.id}, {employment_info: $scope.newBorrower.employment_info});
-    window.location.assign('/api/borrower');
+    window.location.assign('/#/income-info/' + $routeParams.id);
    };
  });
 
@@ -82,28 +96,28 @@ angular.module('BorrowerInfo')
 .controller('BorrowerIncomeUpdateCtrl', function ($scope, BorrowerService, $routeParams) {
   $scope.update = function() {
     BorrowerService.update({id: $routeParams.id}, {income_info: $scope.newBorrower.income_info});
-    window.location.assign('/api/borrower');
+    window.location.assign('/#/expense-info/' + $routeParams.id);
    };
  });
 angular.module('BorrowerInfo')
 .controller('BorrowerExpenseUpdateCtrl', function ($scope, BorrowerService, $routeParams) {
   $scope.update = function() {
     BorrowerService.update({id: $routeParams.id}, {expense_info: $scope.newBorrower.expense_info});
-    window.location.assign('/api/borrower');
+    window.location.assign('/#/asset-info/' + $routeParams.id);
    };
  });
 angular.module('BorrowerInfo')
 .controller('BorrowerAssetUpdateCtrl', function ($scope, BorrowerService, $routeParams) {
   $scope.update = function() {
     BorrowerService.update({id: $routeParams.id}, {asset_info: $scope.newBorrower.asset_info});
-    window.location.assign('/api/borrower');
+    window.location.assign('/#/liability-info/' + $routeParams.id);
    };
  });
 angular.module('BorrowerInfo')
 .controller('BorrowerLiabilityUpdateCtrl', function ($scope, BorrowerService, $routeParams) {
   $scope.update = function() {
     BorrowerService.update({id: $routeParams.id}, {liability_info: $scope.newBorrower.liability_info});
-    window.location.assign('/api/borrower');
+    window.location.assign('/#/borrower/' + $routeParams.id);
    };
  });
 
