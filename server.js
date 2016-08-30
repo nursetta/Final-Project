@@ -16,14 +16,14 @@ var expressSession = require('express-session');
 app.use(expressSession({secret: 'mySecretKey'}));
 app.use(passport.initialize());
 app.use(passport.session());
+var LocalStrategy = require('passport-local').Strategy;
 
-	
 app.get('/', function(req, res){
     res.send('Hello World'); 
 });
 
 app.get('/api/borrower', function(req, res){
-   db.Borrower.find(function(err, borrower){
+   db.Borrower.find({}, function(err, borrower){
         if (err){
             return console.log("index error: " + err);
         }
@@ -65,27 +65,91 @@ app.put('/api/borrower/:id', function (req, res) {
 
 app.post('/api/borrower', function (req, res) {
 	var borrower = new db.Borrower(req.body);
-	var password = req.body.borrower_auth.password;
-	var password_confirmation = req.body.borrower_auth.password_confirmation;
-	db.Borrower.hashPassword(password, function(err, hash) {
-      if(err) {
-        console.log('err');
-      }
-      borrower.borrower_auth.password = hash;
-	    db.Borrower.hashPassword(password_confirmation, function(err, hash) {
-	      if(err) {
-	        console.log('err');
-	      }
-	      borrower.borrower_auth.password_confirmation = hash;
-		    borrower.save(borrower, function(err, borrower) {
-		      if (err){
-		        return console.log("post error: " + err);
-		      }
-				res.json(borrower);
+	var password = req.body.password;
+	var password_confirmation = req.body.password_confirmation;
+	db.Borrower.findOne({username: req.body.username}, function(err, result) {
+		console.log(result);
+		if(err) {
+			console.log('err');
+		}
+		if (result) {
+			console.log('user already exists');
+			res.json({message: "user already exists"});
+		}
+		else {
+			db.Borrower.hashPassword(password, function(err, hash) {
+		      if(err) {
+		        console.log('err');
+		      }
+		      borrower.password = hash;
+			    db.Borrower.hashPassword(password_confirmation, function(err, hash) {
+			      if(err) {
+			        console.log('err');
+			      }
+			      borrower.password_confirmation = hash;
+				    borrower.save(borrower, function(err, borrower) {
+				      if (err){
+				        return console.log("post error: " + err);
+				      }
+						res.json(borrower);
+					});
+				});	
 			});
-		});	
+		}
 	});
-});	
+});
+
+passport.serializeUser( function(borrower, done) {
+  console.log(borrower);
+  var sessionBorrower = { _id: borrower._id  };
+  console.log("session borrower is: "+ sessionBorrower._id);
+  done(null, sessionBorrower);
+});
+
+passport.deserializeUser(function(id, done) {
+    db.Borrower.findById(id, function(err, borrower) {
+        console.log('deserializing user:', borrower);
+        done(err, borrower);
+    });
+});
+
+app.post('/login', function login(req,res,next) {
+		passport.authenticate('local', {failureFlash: true,  },
+			  function(err, borrower, info) {
+			  	if(err) {return next(err);}
+			  	if(!borrower){return res.json({url: '/#/login', message: info.message});}
+			  	req.logIn(borrower,function(err) { //need to explicitly call req.login here, so that serializing happens: http://stackoverflow.com/questions/36525187/passport-serializeuser-is-not-called-with-this-authenticate-callback
+			  		console.log(borrower);
+			  		if (err) {return next(err);}
+			  		return res.json({url: '/#/borrower/' + borrower._id});
+			  	});
+			  })(req,res,next);
+	});
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    db.Borrower.findOne({username: username}, function (err, borrower) {
+      console.log("this is the " + borrower);
+      if (err) { 
+      	return done(err); 
+      }
+      if (!borrower) { 
+      	return done(null, false,{message:'Provided username does not exist in our records!'}); 
+      }
+      borrower.validatePassword(password, function(err, result) {
+      	console.log(password);
+      	console.log(result)
+      	if(err || !result){
+      		return done(null,false,{message:'Incorrect password'});
+      	}else {
+      		return done(null, borrower);
+      	
+      	}
+      });
+    });
+  }
+));
+
 
 app.listen(process.env.PORT || 3000, function () {
 	console.log('Express server is up and running on http://localhost:3000/');

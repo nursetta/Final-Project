@@ -82,12 +82,37 @@ angular.module('BorrowerInfo')
 .controller('SignUpCtrl', function($scope, BorrowerService, $routeParams) {
       $scope.submit = {};
       $scope.submit = function() {
+        
         console.log($scope.newBorrower);
         BorrowerService.save($scope.newBorrower, function(borrower, headers) {
-        window.location.assign('/#/borrower-info/' + borrower._id);
+          if (borrower.message) {
+            console.log(borrower.message);
+          } 
+          else {
+            window.location.assign('/#/borrower-info/' + borrower._id);
+        }
         });
     };
 });
+
+// LOG-IN CONTROLLER //
+
+angular.module('BorrowerInfo')
+.controller('LogInCtrl', function($scope, BorrowerService, $routeParams, $http) {
+  $scope.login = function() {
+    console.log('in the login function');
+    console.dir($scope.newBorrower);
+    $http.post('/login',$scope.newBorrower)
+      .then(function(response) {
+        $scope.errorMessage = response.data.message;
+        console.dir(response);
+        console.log(response.data.message);
+        window.location.assign(response.data.url);
+      });
+    };
+});
+
+
 
 // BORROWER CREATE CONTROLLER //
 
@@ -149,9 +174,6 @@ angular.module('BorrowerInfo')
     window.location.assign('/#/borrower/' + $routeParams.id);
    };
  });
-
-
-// LOGIN CONTROLLER //
 
 
 

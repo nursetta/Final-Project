@@ -5,11 +5,11 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 var BorrowerSchema = new Schema({
-	borrower_auth: {
-		username: String,
-		password: String,
-		password_confirmation: String,
-	},
+
+	username: String,
+	password: String,
+	password_confirmation: String,
+	
 	borrower_info: {
 		first_name: String,
 		last_name: String,
