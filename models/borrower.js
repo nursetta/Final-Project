@@ -1,7 +1,15 @@
+var mongoose = require('mongoose');
+var passportLocalMongoose = require('passport-local-mongoose');
+var bcrypt = require('bcrypt-nodejs');
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 var BorrowerSchema = new Schema({
+	borrower_auth: {
+		username: String,
+		password: String,
+		password_confirmation: String,
+	},
 	borrower_info: {
 		first_name: String,
 		last_name: String,
@@ -70,6 +78,15 @@ var BorrowerSchema = new Schema({
 		alimony_child_support: Number,
 	}
 });
+
+BorrowerSchema.statics.hashPassword = function(password, cb){
+    bcrypt.hash(password, null, null, cb);
+};
+BorrowerSchema.methods.validatePassword = function(password, cb){
+    bcrypt.compare(password, this.password, cb);
+};
+
+BorrowerSchema.plugin(passportLocalMongoose);
 
 var Borrower = mongoose.model('Borrower', BorrowerSchema);
 

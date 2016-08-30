@@ -1,3 +1,4 @@
+
 angular.module('BorrowerInfo')
 .config(function($routeProvider){
     $routeProvider
@@ -5,13 +6,21 @@ angular.module('BorrowerInfo')
         templateUrl: 'templates/home.html',
         controller: 'ButtonClickCtrl'
       })
+      .when('/signup', {
+        templateUrl: 'templates/signup.html',
+        controller: 'SignUpCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'templates/login.html',
+        controller: 'LogInCtrl'
+      })
       .when('/borrower/:id', { 
 			  templateUrl: 'templates/borrowerShow.html',
 			  controller: 'BorrowerShowCtrl'
 		  })
-      .when('/borrower-info', {
+      .when('/borrower-info/:id', {
         templateUrl: 'templates/borrower-info.html',
-        contoller: 'BorrowerCreateCtrl'
+        contoller: 'BorrowerInfoUpdateCtrl'
       })
       .when('/employment-info/:id', { 
         templateUrl: 'templates/employment-info.html',
@@ -67,22 +76,42 @@ angular.module('BorrowerInfo')
         };
 });
 
-
-// BORROWER CREATE CONTROLLER //
+// SIGNUP CONTOLLER //
 
 angular.module('BorrowerInfo')
-.controller('BorrowerCreateCtrl', function($scope, BorrowerService, $routeParams) {
+.controller('SignUpCtrl', function($scope, BorrowerService, $routeParams) {
       $scope.submit = {};
       $scope.submit = function() {
         console.log($scope.newBorrower);
         BorrowerService.save($scope.newBorrower, function(borrower, headers) {
-            console.log(borrower);
-            window.location.assign('/#/employment-info/' + borrower._id);
+        window.location.assign('/#/borrower-info/' + borrower._id);
         });
     };
 });
 
+// BORROWER CREATE CONTROLLER //
+
+// angular.module('BorrowerInfo')
+// .controller('BorrowerCreateCtrl', function($scope, BorrowerService, $routeParams) {
+//       $scope.submit = {};
+//       $scope.submit = function() {
+//         console.log($scope.newBorrower);
+//         BorrowerService.save($scope.newBorrower, function(borrower, headers) {
+//             console.log(borrower);
+//             window.location.assign('/#/employment-info/' + borrower._id);
+//         });
+//     };
+// });
+
 // BORROWER UPDATE CONTROLLERS //
+
+angular.module('BorrowerInfo')
+.controller('BorrowerInfoUpdateCtrl', function ($scope, BorrowerService, $routeParams) {
+  $scope.update = function() {
+    BorrowerService.update({id: $routeParams.id}, {borrower_info: $scope.newBorrower.borrower_info});
+    window.location.assign('/#/employment-info/' + $routeParams.id);
+   };
+ });
 
 angular.module('BorrowerInfo')
 .controller('BorrowerEmploymentUpdateCtrl', function ($scope, BorrowerService, $routeParams) {
@@ -122,7 +151,7 @@ angular.module('BorrowerInfo')
  });
 
 
-
+// LOGIN CONTROLLER //
 
 
 

@@ -1,6 +1,11 @@
 var db = require('./models');
 
 var borrower = [{
+	borrower_auth: {
+		username: "nursetta",
+		password: "1234",
+		password_confirmation: "1234",
+	},
 	borrower_info: {
 	    first_name: "Nick",
 		last_name: "Ursetta",
@@ -75,11 +80,11 @@ db.Borrower.remove({}, function(err, borrowers){
 	} else {
 		console.log('removed all items');
 
-	db.Borrower.create(borrower, function (err, borrowers){
-		if (err) { return console.log ('error:', err);
-	}
-		console.log("created", borrower.length, "borrower");
-		process.exit();
-		});
+	// db.Borrower.create(borrower, function (err, borrowers){
+	// 	if (err) { return console.log ('error:', err);
+	// }
+	// 	console.log("created", borrower.length, "borrower");
+	// 	process.exit();
+	// 	});
 	}
 });
