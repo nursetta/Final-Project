@@ -1,14 +1,40 @@
 <!-- Employment-info Form -->
+<div class="container profile-background">
+    <section>
+        <h2 class="text-center">It's great to meet you, {{borrower.borrower_info.first_name}}!</h2><br> 
 
-<form class="employment-info" ng-submit="update()" ng-controller="BorrowerEmploymentUpdateCtrl">
+        <h3 class="text-center">This is the employment section of your application. While simple on its face, it is important to input as much information as you can. We'll explain why as we go along! </h3>
+    </section>
 
-    <input type="text" ng-model="newBorrower.employment_info.employer_name" placeholder="Employer Name" /><br><br>
-    <input type="text" ng-model="newBorrower.employment_info.employer_address" placeholder="Employer Address" /><br><br>
-    <input type="text" ng-model="newBorrower.employment_info.self_employed" placeholder="Are you Self Employed?" /><br><br>
-    <input type="text" ng-model="newBorrower.employment_info.years_on_job" placeholder="Years on Job" /><br><br>
-    <input type="text" ng-model="newBorrower.employment_info.years_employed_in_profession" placeholder="Years Employed in Profession" /><br><br>
-    <input type="text" ng-model="newBorrower.employment_info.position_or_type_of_business" placeholder="Position or Type of Business" /><br><br>
+	<form class="employment-info text-center" ng-submit="update()" ng-controller="BorrowerEmploymentUpdateCtrl">
+	    <div class="input">
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.employment_info.employer_name" placeholder="Employer Name" /><br><br>
+		</div>
+		    <div class=" input text-center col-sm-6 col-sm-offset-3 ">We know its a pain, but do us a favor and give us your employer's address. We will need it later when running a verification of employment.</div>
+	    <div class="input">
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.employment_info.employer_address" placeholder="Employer Address" /><br><br>
+	    </div>
+	    	<div class="input col-sm-6 col-sm-offset-3">Type of employment is a big deal in the lending industry. It affects the kind of tax return you fill out in addition to the type and amount of documentation your lender will require. Do us a solid and let us know know if you work for yourself, or for someone else. (enter true or false).</div>
+	    <div class="input">
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.employment_info.self_employed" placeholder="Are you Self Employed?" /><br><br>
+	    </div>
+		    <div class="input col-sm-6 col-sm-offset-3">It's important for us to know how long you have been employed. Most lenders require a "steady" two years worth of employment in order to meet basic qualification requirements.</div>
+	    <div class="input">
+	    	<input class=" input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.employment_info.years_on_job" placeholder="Years on Job" /><br><br>
+	    </div>
+	    	<div class="input col-sm-6 col-sm-offset-3">Haven't been employed at your current job for 2 years, but have been in the same industry? Let us know how long you have worked in the same profession! While it may seem like a mute point, lenders like to know your current job is stable. Unfortunately, your lender is not discriminating; bouncing around from job to job or from industry to industry, makes a lender uneasy that you won't be at your current job for very long.</div>
+	    <div class="input">
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.employment_info.years_employed_in_profession" placeholder="Years Employed in Profession" /><br><br>
+	    </div>
+	    	<div class="input col-sm-6 col-sm-offset-3">In all honesty, this isn't really an important field. You can skip it if you want, but it's part of the application to help your lender make sense of the data you are inputing. If you claim you are CEO of Wells Fargo, but your total income is $50,000/yr, we may dig a little deaper into your financials </div>
+	    <div class="input">
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.employment_info.position_or_type_of_business" placeholder="Position or Type of Business" /><br><br>
+	    </div>
 
-    <input type="submit" id="submit" value="Submit" />
+	    <div class="col-sm-12">
+		    <input class="page-number" type="submit" id="submit" value="Submit Emplyment Info" /><br><br>
+	        <p class="text-center page-number">2/6</p>
+        </div>
 
-</form>
+	</form>
+</div>

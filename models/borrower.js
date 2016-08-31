@@ -80,10 +80,10 @@ var BorrowerSchema = new Schema({
 });
 
 BorrowerSchema.statics.hashPassword = function(password, cb){
-    bcrypt.hash(password, null, null, cb);
+  bcrypt.hash(password, null, null, cb);
 };
 BorrowerSchema.methods.validatePassword = function(password, cb){
-    bcrypt.compare(password, this.password, cb);
+  bcrypt.compare(password, this.password, cb);
 };
 
 BorrowerSchema.plugin(passportLocalMongoose);

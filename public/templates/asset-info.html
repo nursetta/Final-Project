@@ -1,22 +1,59 @@
 <!-- Asset-info Form -->
+<div class="container profile-background">
+    <section>
+        <h3 class="text-center">Welcome to the Assets section of your application! We use this </h3> 
 
-<form class="expense-info" ng-submit="update()" ng-controller="BorrowerAssetUpdateCtrl">
+        <h4 class="text-center">It's important to note that all of this informatin is needed on a monthly basis. i.e. monthly base income, monthly overtime income, etc. </h4>
+    </section>
 
-    <input type="text" ng-model="newBorrower.asset_info.bank1" placeholder="Name of Bank" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.bank2" placeholder="Name of Bank" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.bank3" placeholder="Name of Bank" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.cash_or_market_value1" placeholder="Cash in Bank" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.cash_or_market_value2" placeholder="Cash in Bank" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.cash_or_market_value3" placeholder="Cash in Bank" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.stocks_or_bonds" placeholder="Value of Stocks or Bonds" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.cash_value_of_life_insurance" placeholder="Cash Value of Life Insurance" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.real_estate_owned" placeholder="Real Estate Owned" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.vested_retirement_interest" placeholder="Vested Retirement Interest" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.net_worth_of_business" placeholder="Net Worth of Business" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.automobile_make" placeholder="Auto Make and Model" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.automobile_value" placeholder="Value of Auto" /><br><br>
-    <input type="text" ng-model="newBorrower.asset_info.other_assets" placeholder="Value of Other Assets" /><br><br>
+    <form class="expense-info text-center" ng-submit="update()" ng-controller="BorrowerAssetUpdateCtrl">
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.bank1" placeholder="Name of Bank or Other Financial institution" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.cash_or_market_value1" placeholder="Cash/Assets Held at Institution" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.bank2" placeholder="Name of Bank or Other Financial institution" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.cash_or_market_value2" placeholder="Cash/Assets Held at Institution" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.bank3" placeholder="Name of Bank or Other Financial institution" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.cash_or_market_value3" placeholder="Cash/Assets Held at Institution" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.stocks_or_bonds" placeholder="Value of Stocks or Bonds" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.cash_value_of_life_insurance" placeholder="Cash Value of Life Insurance" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.real_estate_owned" placeholder="Real Estate Owned" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.vested_retirement_interest" placeholder="Vested Retirement Interest" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.net_worth_of_business" placeholder="Net Worth of Business" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.automobile_make" placeholder="Auto Make and Model" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.automobile_value" placeholder="Value of Auto" /><br><br>
+        </div>
+        <div class="input">
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.asset_info.other_assets" placeholder="Value of Other Assets" /><br><br>
+        </div>
 
-    <input type="submit" id="submit" value="Submit" />
+        <div class="col-sm-12">
+            <input sclass="page-number" type="submit" id="submit" value="Submit Asset Info" /><br><br>
+            <p class="text-center page-number">5/6</p>
+        </div>
 
-</form>
+    </form>
+</div>

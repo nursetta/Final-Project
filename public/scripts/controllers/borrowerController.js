@@ -140,6 +140,8 @@ angular.module('BorrowerInfo')
 
 angular.module('BorrowerInfo')
 .controller('BorrowerEmploymentUpdateCtrl', function ($scope, BorrowerService, $routeParams) {
+  $scope.borrower = BorrowerService.get({id: $routeParams.id});
+   console.log($scope.borrower);
   $scope.update = function() {
     BorrowerService.update({id: $routeParams.id}, {employment_info: $scope.newBorrower.employment_info});
     window.location.assign('/#/income-info/' + $routeParams.id);

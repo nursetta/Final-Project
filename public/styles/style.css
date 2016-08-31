@@ -9,8 +9,9 @@
 }
 
 .nav-button {
-color: black;
+    color: black;
 }
+
 .navbar .navbar-header {
    font-family: Optima;
 }
@@ -123,6 +124,8 @@ color: black;
   margin: 2% auto auto auto;
 }
 
-
-
+.input {
+  margin-bottom: 2%;
+  padding: 1% 0% 1% 0%;
+}
 
