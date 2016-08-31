@@ -43,10 +43,13 @@ app.put('/api/borrower/:id', function (req, res) {
     var borrowerId = req.params.id;
     var update = req.body;
         db.Borrower.findOneAndUpdate({_id: borrowerId}, update, function(err, borrower){
-        if (err) { return console.log("update error: " + err); }
-    });
-        // res.json(borrower);
+        if (err) { 
+        	res.json({message: "error"});
+            }
+        res.json(borrower);
+		});
 });
+
 app.post('/api/borrower', function (req, res) {
     var borrower = new db.Borrower(req.body);
     var password = req.body.password;
