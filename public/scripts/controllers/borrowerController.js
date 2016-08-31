@@ -41,6 +41,10 @@ angular.module('BorrowerInfo')
       .when('/liability-info/:id', {
         templateUrl: 'templates/liability-info.html',
         contoller: 'BorrowerLiabilityUpdateCtrl'
+      })
+      .when('/new-mortgage-info/:id', {
+        templateUrl: 'templates/new-mortgage-info.html',
+        contoller: 'BorrowerNewMortgageUpdateCtrl'
       });
 });
 
@@ -57,7 +61,7 @@ angular.module('BorrowerInfo')
 angular.module('BorrowerInfo')
 .controller('ButtonClickCtrl', function ($scope, BorrowerService, $routeParams) {
    $scope.redirect = function() {
-      window.location.assign('/#/borrower-info');
+      window.location.assign('/#/login');
    };
 });   
 
@@ -173,11 +177,31 @@ angular.module('BorrowerInfo')
 .controller('BorrowerLiabilityUpdateCtrl', function ($scope, BorrowerService, $routeParams) {
   $scope.update = function() {
     BorrowerService.update({id: $routeParams.id}, {liability_info: $scope.newBorrower.liability_info});
-    window.location.assign('/#/borrower/' + $routeParams.id);
+    window.location.assign('/#/new-mortgage-info/' + $routeParams.id);
    };
  });
+angular.module('BorrowerInfo')
+.controller('BorrowerNewMortgageUpdateCtrl', function ($scope, BorrowerService, $routeParams) {
+  $scope.update = function() {
+    BorrowerService.update({id: $routeParams.id}, {new_mortgage_info: $scope.newBorrower.new_mortgage_info});
+    window.location.assign('/#/borrower/' + $routeParams.id);
+   };
+  $scope.calcMortgageAmount = function() {
+    var homePrice =  $scope.newBorrower.new_mortgage_info.home_price;
+    var rate = $scope.newBorrower.new_mortgage_info.interest_rate/100;
+    var term = $scope.newBorrower.new_mortgage_info.term;
+    var loanAmount = homePrice * 0.8;
+    var pi = $scope.newBorrower.new_mortgage_info.monthly_pi = ((rate/12)*(loanAmount) /( 1-Math.pow( (1+(rate/12)), (-term*12) ) )).toFixed(2);
+    var ti = $scope.newBorrower.new_mortgage_info.monthly_ti = ((homePrice * 0.0125) / 12).toFixed(2);
+    var hoa = $scope.newBorrower.new_mortgage_info.monthly_hoa;
+      $scope.newBorrower.new_mortgage_info.loan_amount = loanAmount;
+      $scope.newBorrower.new_mortgage_info.monthly_pi = pi;
+      $scope.newBorrower.new_mortgage_info.monthly_ti = ti;
+      $scope.newBorrower.new_mortgage_info.total_monhthly_payment = -((-pi)+(-ti)+(-hoa));
+    }; 
+ });
 
-
+// fix total monthyl payment spelling //
 
 
 

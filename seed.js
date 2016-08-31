@@ -71,6 +71,17 @@ var borrower = [{
 		monthly_payment4: 0,
 		monthly_payment5: 0,
 		alimony_child_support: 0,
+	},
+	new_mortgage_info: {
+		credit_score: 680,
+		home_price: 250000,
+		loan_amount: 200000,
+		interest_rate: 4,
+		term: 30,
+		monthly_pi: 750,
+		monthly_ti: 100,
+		monthly_hoa: 400,
+		total_monhthly_payment: 1250,
 	}
 }];
 

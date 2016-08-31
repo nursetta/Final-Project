@@ -1,0 +1,49 @@
+<!-- New-Mortgage-info Form -->
+<div class="container profile-background">
+	<section>
+        <h3 class="text-center">Now it's time to enter in your new mortgage information.</h3> 
+
+        <h4 class="text-center">It's important to note that all of this informatin is needed on a monthly basis. i.e. monthly base income, monthly overtime income, etc. </h4>
+    </section>
+
+	<form class="new-mortgage-info text-center" ng-submit="update()" ng-controller="BorrowerNewMortgageUpdateCtrl">
+		
+		<div class="input">
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.new_mortgage_info.credit_score" placeholder="Credit Score" /><br><br>
+		</div>
+			<!-- <div class=" input text-center col-sm-6 col-sm-offset-3 ">Look at you working overtime! While the extra income makes a difference to YOU on a monthly basis, it may or may not matter when it comes to qualifying for a loan. A general rule of thumb here is that you need have worked and recieved a consistent amount of overtime income for the last two years. Are you noticing a trend here? Two years generally shows stability to a lender. Dont be discouraged if you dont have full two year history though. Your lender could very well make an exception to count this towards your total income. </div> -->
+		<div class="input">
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.new_mortgage_info.home_price" placeholder="Home Price" ng-change="calcMortgageAmount()"/><br><br>
+		</div>
+			<!-- <div class=" input text-center col-sm-6 col-sm-offset-3 ">You guessed it! The two year rule applies here as well. As a matter of fact, this rule applies for the rest of this part of the application. </div> -->
+		<div class="input">    
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.new_mortgage_info.loan_amount" placeholder="New Loan Amount" ng-change="calcMortgageAmount()"/><br><br>
+		</div>
+		<div class="input">    
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.new_mortgage_info.interest_rate" placeholder="Interest Rate" ng-change="calcMortgageAmount()"/><br><br>
+		</div>
+		<div class="input">    
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.new_mortgage_info.term" placeholder="Loan Term" ng-change="calcMortgageAmount()"/><br><br>
+		</div>
+			<!-- <div class=" input text-center col-sm-6 col-sm-offset-3 ">Are you generating any income from any investments you have? Maybe have a substantial amount of money in a bank that is generating interest for you? Go ahead and put that amount below. </div> -->
+		<div class="input">    
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.new_mortgage_info.monthly_pi" placeholder="Monthhly Principle and Interest Payment" ng-change="calcMortgageAmount()"/><br><br>
+		</div>
+		<div class="input">
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.new_mortgage_info.monthly_ti" placeholder="Monthly Tax and Insurance Payment" ng-change="calcMortgageAmount()"/><br><br>
+		</div>
+			<!-- <div class=" input text-center col-sm-6 col-sm-offset-3 ">Key word here is NET. Make sure this is the income you are generating from your rental property after you pay other expenses like your mortgage, repairs, etc. </div> -->
+		<div class="input">    
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.new_mortgage_info.monthly_hoa" placeholder="Monthly HOA Dues" ng-change="calcMortgageAmount()"/><br><br>
+		</div>
+		<div class="input">    
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.new_mortgage_info.total_monhthly_payment" placeholder="Total Monthly Mortgage Payment" ng-change="calcMortgageAmount()" /><br><br>
+		</div>
+		    
+	    <div class="col-sm-12">
+		    <input class="page-number" type="submit" id="submit" value="Submit New Mortgage Info" /><br><br>
+	        <p class="text-center page-number">7/7</p>
+	    </div>
+
+	</form>
+</div>

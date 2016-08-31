@@ -76,6 +76,17 @@ var BorrowerSchema = new Schema({
 		monthly_payment4: Number,
 		monthly_payment5: Number,
 		alimony_child_support: Number,
+	},
+	new_mortgage_info: {
+		credit_score: Number,
+		home_price: Number,
+		loan_amount: Number,
+		term: Number,
+		interest_rate: Number,
+		monthly_pi: Number,
+		monthly_ti: Number,
+		monthly_hoa: Number,
+		total_monhthly_payment: Number,
 	}
 });
 
