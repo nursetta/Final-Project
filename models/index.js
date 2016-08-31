@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/qualifi-app");
+mongoose.connect(process.env.MONGODB_URI ||
+					"mongodb://localhost/qualifi-app");
 
 module.exports.Borrower= require("./borrower.js");
