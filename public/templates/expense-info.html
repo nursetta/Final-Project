@@ -9,28 +9,39 @@
 	<form class="expense-info text-center" ng-submit="update()" ng-controller="BorrowerExpenseUpdateCtrl">
 
 		<div class="input">
-	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.rent_expense" placeholder="Monthly Rent" /><br>
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.rent_expense" placeholder="Monthly Rent" ng-change="calcTotalExpense()"/><br><br>
 	    </div>
 	    <div class="input">
-	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.mortgage_pi" placeholder="Mortgage Principle and Interest" /><br><br>
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.mortgage_pi" placeholder="Mortgage Principle and Interest" ng-change="calcTotalExpense()" /><br><br>
+	    </div>
 	    <div class="input">
-	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.other_mortgage_pi" placeholder="Other Mortgage Principle and Interest" /><br><br>
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.other_mortgage_pi" placeholder="Other Mortgage Principle and Interest" ng-change="calcTotalExpense()" /><br><br>
+	    </div>
 	    <div class="input">
-	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.hazard_insurance" placeholder="Hazard Insurance" /><br><br>
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.hazard_insurance" placeholder="Hazard Insurance" ng-change="calcTotalExpense()" /><br><br>
+	    </div>
 	    <div class="input">
-	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.real_estate_taxes" placeholder="Real Estate Taxes" /><br><br>
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.real_estate_taxes" placeholder="Real Estate Taxes" ng-change="calcTotalExpense()" /><br><br>
+	    </div>
 	    <div class="input">
-	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.mortgage_insurance" placeholder="Mortgage Insurance" /><br><br>
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.mortgage_insurance" placeholder="Mortgage Insurance" ng-change="calcTotalExpense()" /><br><br>
+	    </div>
 	    <div class="input">
-	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.hoa_dues" placeholder="HOA Dues" /><br><br>
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.hoa_dues" placeholder="HOA Dues" ng-change="calcTotalExpense()" /><br><br>
+	    </div>
 	    <div class="input">
-	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.other" placeholder="Other Monthly Expenses" /><br><br>
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.other" placeholder="Other Monthly Expenses" ng-change="calcTotalExpense()" /><br><br>
+	    </div>
+	    <div class="input">
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.total_monthly_expense" placeholder="Total Monthly Expenses" /><br><br>
+	    </div>
 
 	    <div class="col-sm-12">
-            <input sclass="page-number" type="submit" id="submit" value="Submit Expense Info" /><br><br>
+            <input class="page-number" type="submit" id="submit" value="Submit Expense Info" /><br><br>
             <p class="text-center page-number">4/7</p>
         </div>
 
 	</form>
 </div>
+
 <!-- fix other in DB to say other_expense -->

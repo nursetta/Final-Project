@@ -9,29 +9,32 @@
 	<form class="income-info text-center" ng-submit="update()" ng-controller="BorrowerIncomeUpdateCtrl">
 		
 		<div class="input">
-		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.base_income" placeholder="Monthhly Base Income" /><br><br>
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.base_income" placeholder="Monthhly Base Income" ng-change="calcTotalIncome()"/><br><br>
 		</div>
 			<div class=" input text-center col-sm-6 col-sm-offset-3 ">Look at you working overtime! While the extra income makes a difference to YOU on a monthly basis, it may or may not matter when it comes to qualifying for a loan. A general rule of thumb here is that you need have worked and recieved a consistent amount of overtime income for the last two years. Are you noticing a trend here? Two years generally shows stability to a lender. Dont be discouraged if you dont have full two year history though. Your lender could very well make an exception to count this towards your total income. </div>
 		<div class="input">
-		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.overtime_income" placeholder="Monthhly Overtime Income" /><br><br>
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.overtime_income" placeholder="Monthhly Overtime Income" ng-change="calcTotalIncome()"/><br><br>
 		</div>
 			<div class=" input text-center col-sm-6 col-sm-offset-3 ">You guessed it! The two year rule applies here as well. As a matter of fact, this rule applies for the rest of this part of the application. </div>
 		<div class="input">    
-		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.bonus_income" placeholder="Monthhly Bonus Income" /><br><br>
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.bonus_income" placeholder="Monthhly Bonus Income" ng-change="calcTotalIncome()"/><br><br>
 		</div>
 		<div class="input">    
-		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.commision_income" placeholder="Monthhly Commission Income" /><br><br>
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.commision_income" placeholder="Monthhly Commission Income" ng-change="calcTotalIncome()"/><br><br>
 		</div>
 			<div class=" input text-center col-sm-6 col-sm-offset-3 ">Are you generating any income from any investments you have? Maybe have a substantial amount of money in a bank that is generating interest for you? Go ahead and put that amount below. </div>
 		<div class="input">    
-		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.dividend_interest_income" placeholder="Monthhly Dividend/Interest Income" /><br><br>
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.dividend_interest_income" placeholder="Monthhly Dividend/Interest Income" ng-change="calcTotalIncome()"/><br><br>
 		</div>
 			<div class=" input text-center col-sm-6 col-sm-offset-3 ">Key word here is NET. Make sure this is the income you are generating from your rental property after you pay other expenses like your mortgage, repairs, etc. </div>
 		<div class="input">    
-		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.net_rental_income" placeholder="Monthhly Net Rental Income" /><br><br>
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.net_rental_income" placeholder="Monthhly Net Rental Income" ng-change="calcTotalIncome()"/><br><br>
 		</div>
 		<div class="input">    
-		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.other_income" placeholder="Monthhly Other Income" /><br><br>
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.other_income" placeholder="Monthhly Other Income" ng-change="calcTotalIncome()"/><br><br>
+		</div>
+		<div class="input">    
+		    <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.income_info.total_monthly_income" placeholder="Total Monthly Income" /><br><br>
 		</div>
 		    
 	    <div class="col-sm-12">

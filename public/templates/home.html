@@ -5,7 +5,29 @@
 		</div>
 	</section>
 
-	<section class="call-to-action">
-		<button class="home-button" type="button" ng-click="redirect()">Get Qualifi'd
+<!-- 	<section class="call-to-action">
+		<button class="home-button" type="button" ng-click="redirect()">Sign Up
 		</button>
-	</section>
+	</section> -->
+
+<div class="login-row row col-lg-6">
+	<div class="text-center log-in" >
+		<h3 class="log-in-text">Sign Up!</h3>
+		<form class="signup" ng-submit="submit()" ng-controller="SignUpCtrl">
+			<input type="text" ng-model="newBorrower.username" placeholder="Email" /><br><br>
+			<input type="text" ng-model="newBorrower.password" placeholder="Password" /><br><br>
+			<input type="text" ng-model="newBorrower.password_confirmation" placeholder="Password Confirmation" /><br><br>
+			<input type="submit" id="submit" value="Submit" />
+		</form>
+	</div>	
+</div>
+<div class="login-row1 row col-lg-6 col-lg-offset-6">
+	<div class="text-center log-in1" >
+		<h3 class="log-in-text">Log In!</h3>
+		<form class="login" ng-submit="login()" ng-controller="LogInCtrl">
+		    <input type="text" ng-model="newBorrower.username" placeholder="Username" /><br><br>
+		    <input type="text" ng-model="newBorrower.password" placeholder="Password" /><br><br>
+		    <input type="submit" id="submit" value="Log In!" />
+		</form>
+	</div>	
+</div>

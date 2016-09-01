@@ -39,9 +39,14 @@
     margin-right: 15px;
     margin-bottom: 0px;
     background-color: transparent;
-    background-image: none;
-    border: 1px solid transparent;
+/*    background-image: none;*/
+    border: 1px solid black;
     border-radius: 4px;
+}
+
+.navbar-header .navbar-toggle .icon-bar{
+    color: black;
+      border: 1px solid black;  
 }
 
 @media (min-width: 768px)
@@ -70,6 +75,36 @@
   font-size: 60px;
 }
 
+/* LOGIN SECTION*/
+.login-row {
+    padding: 0;
+    margin: 0;
+}
+.login-row1 {
+    padding: 0;
+    margin: 0;
+}
+
+.log-in-text {
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+.log-in {
+  padding: 30px 0px 30px 0px;
+  margin: 0px 0px 0px 10px;
+  background: linear-gradient(135deg, rgba(30,154,67,1) 0%,rgba(126,232,147,0) 100%);
+  column-width: 100%;
+  margin: 0;
+}
+.log-in1 {
+  padding: 30px 0px 71px 0px;
+  margin: 0px 0px 0px 10px;
+  background: linear-gradient(135deg, rgba(30,154,67,1) 0%,rgba(126,232,147,0) 100%);
+  column-width: 100%;
+  margin: 0;
+}
+
 /* Profile Page */
 
 .profile-background {
@@ -94,10 +129,12 @@
 
 /* Footer Section */
 .footer {
-  height: 10vh;
+
   background: white;
   text-align: center;
   padding: 60px;
+
+
 }
 
 .footer-headline {
@@ -115,10 +152,6 @@
   color: black;
 }
 
-.mobile-candidates-button {
-  display: none;
-}
-
 /* Borrower Info Page */
 .borrower-info {
   margin: 2% auto auto auto;
@@ -129,3 +162,15 @@
   padding: 1% 0% 1% 0%;
 }
 
+.dti {
+  border: 3pt solid black;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 20px;
+  padding: 10px 0px 10px 0px;
+  margin: 18px 0px 0px 0px;
+  background: #bdc3c7;
+}
+.no_qual_main_page {
+  background-color: #d6f5e0;
+}

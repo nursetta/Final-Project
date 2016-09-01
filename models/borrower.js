@@ -14,7 +14,7 @@ var BorrowerSchema = new Schema({
 		first_name: String,
 		last_name: String,
 		phone_number: Number,
-		date_of_birth: Date,
+		date_of_birth: String,
 		years_in_school: Number,
 		present_address: String,
 		mailing_address: String,
@@ -37,6 +37,7 @@ var BorrowerSchema = new Schema({
 		dividend_interest_income: Number,
 		net_rental_income: Number,
 		other_income: Number,
+		total_monthly_income: Number,
 	},
 	expense_info: {
 		rent_expense: Number,
@@ -47,6 +48,7 @@ var BorrowerSchema = new Schema({
 		mortgage_insurance: Number,
 		hoa_dues: Number,
 		other: Number,
+		total_monthly_expense: Number,
 	},
 	asset_info: {
 		bank1: String,
@@ -76,6 +78,7 @@ var BorrowerSchema = new Schema({
 		monthly_payment4: Number,
 		monthly_payment5: Number,
 		alimony_child_support: Number,
+		total_monthly_liability: Number,
 	},
 	new_mortgage_info: {
 		credit_score: Number,
@@ -86,7 +89,7 @@ var BorrowerSchema = new Schema({
 		monthly_pi: Number,
 		monthly_ti: Number,
 		monthly_hoa: Number,
-		total_monhthly_payment: Number,
+		total_monthly_payment: Number,
 	}
 });
 

@@ -23,25 +23,13 @@
 	<!-- Income information -->
 	<div class="income-div text-center">
     	<h3>Income Information:</h3>
-    	<h4 class = "income-info">Total Monthly Income: ${{ borrower.income_info.base_income + 
-			borrower.income_info.overtime_income + 
-    	    borrower.income_info.bonus_income + 
-    	    borrower.income_info.commision_income + 
-    	    borrower.income_info.dividend_interest_income +
-    	    borrower.income_info.net_rental_income + 
-    	    borrower.income_info.other_income }}
+    	<h4 class = "income-info">Total Monthly Income: ${{ borrower.income_info.total_monthly_income}}
 		</h4>
 	</div>
 	<!-- Expense Information -->
 	<div class="expense-div text-center">
     	<h3>Expense Information:</h3>
-    	<h4 class = "expense-info">Total Monthly Expense: ${{ borrower.expense_info.rent_expense + 
-			borrower.expense_info.mortgage_pi + 
-    		borrower.expense_info.other_mortgage_pi + 
-    		borrower.expense_info.hazard_insurance + 
-    		borrower.expense_info.real_estate_taxes +
-    		borrower.expense_info.mortgage_insurance + 
-    		borrower.expense_info.other }}
+    	<h4 class = "expense-info">Total Monthly Expense: ${{ borrower.expense_info.total_monthly_expense}}
 		</h4>
 	</div>
 	<!-- Asset Information -->
@@ -61,11 +49,12 @@
 	<!-- Liability Information -->
 	<div class="liability-div text-center">
     	<h3>Liability Information:</h3>
-    	<h4 class = "liability-info">Total Monthly Liabilities: ${{ borrower.liability_info.monthly_payment1 + 
-			borrower.liability_info.monthly_payment2 + 
-    		borrower.liability_info.monthly_payment3 + 
-    		borrower.liability_info.monthly_payment4 + 
-    		borrower.liability_info.monthly_payment5 }}
+    	<h4 class = "liability-info">Total Monthly Liabilities: ${{ borrower.liability_info.total_monthly_liability}}
 		</h4>
 	</div>
 </section>
+
+    <section class="see-if-qualifi-button">
+        <button class="qualifi-button" type="button" ng-click="redirectToQualifi()">Get Qualifi'd
+        </button>
+    </section>
