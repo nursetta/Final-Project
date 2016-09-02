@@ -174,3 +174,8 @@
 .no_qual_main_page {
   background-color: #d6f5e0;
 }
+
+.screen-shot {
+    width: 500px;
+    height: 500px;
+}
