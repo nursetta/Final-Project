@@ -1,5 +1,5 @@
 <h3> Screen Shot of App: </h3>
-<img class="screen-shot" src='public/styles/final-project.jpg'>
+<img class="screen-shot" src='public/styles/final-project.png'>
 
 <h3> Technologies Used: </h3>
 <ul>
