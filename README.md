@@ -12,12 +12,12 @@
 <li>CSS</li>
 </ul>
 
-<h2>I wanted to build an application that would help people better understand the mortgage qualification process. I wanted it to be informative and accurate with out the user needing to share a ton of personal information.</h2>
+<h4>I wanted to build an application that would help people better understand the mortgage qualification process. I wanted it to be informative and accurate with out the user needing to share a ton of personal information.</h4>
 
 <h3>Installation Instructions:</h3>
-<h2>This project was set up using bower components so most of the dependencies should be saved within the app. All you need to do is fork and clone the repo and run npm install.</h2>
+<h4>This project was set up using bower components so most of the dependencies should be saved within the app. All you need to do is fork and clone the repo and run npm install.</h4>
 
-<h2>User Stories:</h2>
-<h3>https://trello.com/b/V1Fzmgbf/final-project</h3>
+<h3>User Stories:</h3>
+<h4>https://trello.com/b/V1Fzmgbf/final-project</h4>
 <h4>Wire frames are included in the trello link</h4>
 
