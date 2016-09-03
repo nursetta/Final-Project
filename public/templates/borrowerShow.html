@@ -2,59 +2,165 @@
 <section class=" profile-background container-fluid">
 	<div class="profile-img"></div>
 	
-	<!-- Profile Information -->
-	<div class="profile-div text-center">
-    	<h1 class = "profile-info">{{ borrower.borrower_info.first_name }}
-    		{{ borrower.borrower_info.last_name }}
-    	</h1>
-    	<h4 class = "profile-info">{{ borrower.borrower_info.present_address }}</h4>
-    	<h4 class = "profile-info">{{ borrower.borrower_info.phone_number }}</h4>
-    	<h4 class = "profile-info">{{ borrower.borrower_info.date_of_birth }}</h4>
-	</div>
-	<!-- Employment information -->
-	<div class="employment-div text-center">
-    	<h3>Employment Information:</h3>
-    		<h4 class = "employment-info">{{ borrower.employment_info.employer_name }}</h5> 
-			<h5 class = "employment-info">{{ borrower.employment_info.employer_address }}</h5> 
-    	    <h5 class = "employment-info">{{ borrower.employment_info.position_or_type_of_business }}</h5> 
-    	    <h5 class = "employment-info">{{ borrower.employment_info.years_on_job }}</h5> 
-    	    <h5 class = "employment-info">{{ borrower.employment_info.years_employed_in+profession }}</h5>
-	</div>
-	<!-- Income information -->
-	<div class="income-div text-center">
-    	<h3>Income Information:</h3>
-    	<h4 class = "income-info">Total Monthly Income: ${{ borrower.income_info.total_monthly_income}}
-		</h4>
-	</div>
-	<!-- Expense Information -->
-	<div class="expense-div text-center">
-    	<h3>Expense Information:</h3>
-    	<h4 class = "expense-info">Total Monthly Expense: ${{ borrower.expense_info.total_monthly_expense}}
-		</h4>
-	</div>
-	<!-- Asset Information -->
-	<div class="asset-div text-center">
-    	<h3>Asset Information:</h3>
-    	<h4 class = "asset-info">Total Cash in bank: ${{ borrower.asset_info.cash_or_market_value1 + 
-			borrower.asset_info.cash_or_market_value2 + 
-    		borrower.asset_info.cash_or_market_value3 }}</h4> 
-    	<h4 class="asset-div text center"> Stocks and Bonds: ${{ borrower.asset_info.stocks_or_bonds }}</h4> 
-    	<h4 class="asset-div text center"> Cash Value of Life Insurance: ${{ borrower.asset_info.cash_value_of_life_insurance }}</h4>
-    	<h4 class="asset-div text center"> Value of Real Estate Owned: ${{ borrower.asset_info.real_estate_owned }}</h4> 
-    	<h4 class="asset-div text center"> Vested Interest in Retirement Funds: ${{ borrower.asset_info.vested_retirement_interest }}</h4> 
-    	<h4 class="asset-div text center"> Net Worth of Business: ${{ borrower.asset_info.net_worth_of_business }}</h4> 
-    	<h4 class="asset-div text center"> Automobile: {{ borrower.asset_info.automobile_make }} | Value: ${{ borrower.asset_info.automobile_value }}</h4> 
-    	<h4 class="asset-div text center"> Value of Other Assets: ${{ borrower.asset_info.other_assets }}</h4> 
-	</div>
-	<!-- Liability Information -->
-	<div class="liability-div text-center">
-    	<h3>Liability Information:</h3>
-    	<h4 class = "liability-info">Total Monthly Liabilities: ${{ borrower.liability_info.total_monthly_liability}}
-		</h4>
-	</div>
+    <!-- Profile Information -->
+    	<!-- <div class="profile-div text-center">
+        	<h1 class = "profile-info">{{ borrower.borrower_info.first_name }}
+        		{{ borrower.borrower_info.last_name }}
+        	</h1>
+        	<h4 class = "profile-info">{{ borrower.borrower_info.present_address }}</h4>
+        	<h4 class = "profile-info">{{ borrower.borrower_info.phone_number }}</h4>
+        	<h4 class = "profile-info">{{ borrower.borrower_info.date_of_birth }}</h4>
+    	</div> -->
+    <div class="flip"> 
+        <div class="card"> 
+            <div class="face front"> 
+                <div>Borrower Info</div>
+            </div>
+                <div class="face back">
+                    <div class="profile-div text-center">
+                        <h1 class = "profile-info">{{ borrower.borrower_info.first_name }}
+                        {{ borrower.borrower_info.last_name }}
+                        </h1>
+                        <h4 class = "profile-info">{{ borrower.borrower_info.present_address }}</h4>
+                        <h4 class = "profile-info">{{ borrower.borrower_info.phone_number }}</h4>
+                        <h4 class = "profile-info">{{ borrower.borrower_info.date_of_birth }}</h4>
+                    </div>
+                </div> 
+        </div> 
+    </div> 
+
+    <!-- Employment information -->
+    	<!-- <div class="employment-div text-center">
+        	<h3>Employment Information:</h3>
+        		<h4 class = "employment-info">{{ borrower.employment_info.employer_name }}</h5> 
+    			<h5 class = "employment-info">{{ borrower.employment_info.employer_address }}</h5> 
+        	    <h5 class = "employment-info">{{ borrower.employment_info.position_or_type_of_business }}</h5> 
+        	    <h5 class = "employment-info">{{ borrower.employment_info.years_on_job }}</h5> 
+        	    <h5 class = "employment-info">{{ borrower.employment_info.years_employed_in+profession }}</h5>
+    	</div> -->
+    <div class="flip"> 
+        <div class="card"> 
+            <div class="face front"> 
+                <div>Employment Info</div>
+            </div>
+                <div class="face back">
+                    <div class="employment-div text-center">
+                        <h3>Employment Information:</h3>
+                        <h4 class = "employment-info">{{ borrower.employment_info.employer_name }}</h5> 
+                        <h5 class = "employment-info">{{ borrower.employment_info.employer_address }}</h5> 
+                        <h5 class = "employment-info">{{ borrower.employment_info.position_or_type_of_business }}</h5> 
+                        <h5 class = "employment-info">{{ borrower.employment_info.years_on_job }}</h5> 
+                        <h5 class = "employment-info">{{ borrower.employment_info.years_employed_in+profession }}</h5>
+                    </div>
+                </div> 
+        </div> 
+    </div>
+    	
+    <!-- Income information -->
+    	<!-- <div class="income-div text-center">
+        	<h3>Income Information:</h3>
+        	<h4 class = "income-info">Total Monthly Income: ${{ borrower.income_info.total_monthly_income}}
+    		</h4>
+    	</div> -->
+    <div class="flip"> 
+        <div class="card"> 
+            <div class="face front"> 
+                <div>Income Info</div>
+            </div>
+                <div class="face back">
+                    <div class="income-div text-center">
+                        <h3>Income Information:</h3>
+                        <h4 class = "income-info">Total Monthly Income: ${{ borrower.income_info.total_monthly_income}}
+                        </h4>
+                    </div>
+                </div> 
+        </div> 
+    </div>    
+
+    <!-- Expense Information -->
+    	<!-- <div class="expense-div text-center">
+        	<h3>Expense Information:</h3>
+        	<h4 class = "expense-info">Total Monthly Expense: ${{ borrower.expense_info.total_monthly_expense}}
+    		</h4>
+    	</div> -->
+    <div class="flip"> 
+        <div class="card"> 
+            <div class="face front"> 
+                <div>Expense Info</div>
+            </div>
+                <div class="face back">
+                    <div class="expense-div text-center">
+                        <h3>Expense Information:</h3>
+                        <h4 class = "expense-info">Total Monthly Expense: ${{ borrower.expense_info.total_monthly_expense}}
+                        </h4>
+                    </div>
+                </div> 
+        </div> 
+    </div>
+
+    <!-- Asset Information -->
+    	<!-- <div class="asset-div text-center">
+        	<h3>Asset Information:</h3>
+        	<h4 class = "asset-info">Total Cash in bank: ${{ borrower.asset_info.cash_or_market_value1 + 
+    			borrower.asset_info.cash_or_market_value2 + 
+        		borrower.asset_info.cash_or_market_value3 }}</h4> 
+        	<h4 class="asset-div text center"> Stocks and Bonds: ${{ borrower.asset_info.stocks_or_bonds }}</h4> 
+        	<h4 class="asset-div text center"> Cash Value of Life Insurance: ${{ borrower.asset_info.cash_value_of_life_insurance }}</h4>
+        	<h4 class="asset-div text center"> Value of Real Estate Owned: ${{ borrower.asset_info.real_estate_owned }}</h4> 
+        	<h4 class="asset-div text center"> Vested Interest in Retirement Funds: ${{ borrower.asset_info.vested_retirement_interest }}</h4> 
+        	<h4 class="asset-div text center"> Net Worth of Business: ${{ borrower.asset_info.net_worth_of_business }}</h4> 
+        	<h4 class="asset-div text center"> Automobile: {{ borrower.asset_info.automobile_make }} | Value: ${{ borrower.asset_info.automobile_value }}</h4> 
+        	<h4 class="asset-div text center"> Value of Other Assets: ${{ borrower.asset_info.other_assets }}</h4> 
+    	</div> -->
+    <div class="flip"> 
+        <div class="card"> 
+            <div class="face front"> 
+                <div>Asset Info</div>
+            </div>
+                <div class="face back">
+                    <div class="asset-div text-center">
+                        <h3>Asset Information:</h3>
+                        <h4 class = "asset-info">Total Cash in bank: ${{ borrower.asset_info.cash_or_market_value1 + 
+                            borrower.asset_info.cash_or_market_value2 + 
+                            borrower.asset_info.cash_or_market_value3 }}</h4> 
+                        <h4 class="asset-div text center"> Stocks and Bonds: ${{ borrower.asset_info.stocks_or_bonds }}</h4> 
+                        <h4 class="asset-div text center"> Cash Value of Life Insurance: ${{ borrower.asset_info.cash_value_of_life_insurance }}</h4>
+                        <h4 class="asset-div text center"> Value of Real Estate Owned: ${{ borrower.asset_info.real_estate_owned }}</h4> 
+                        <h4 class="asset-div text center"> Vested Interest in Retirement Funds: ${{ borrower.asset_info.vested_retirement_interest }}</h4> 
+                        <h4 class="asset-div text center"> Net Worth of Business: ${{ borrower.asset_info.net_worth_of_business }}</h4> 
+                        <h4 class="asset-div text center"> Automobile: {{ borrower.asset_info.automobile_make }} | Value: ${{ borrower.asset_info.automobile_value }}</h4> 
+                        <h4 class="asset-div text center"> Value of Other Assets: ${{ borrower.asset_info.other_assets }}</h4> 
+                    </div>
+                </div> 
+        </div> 
+    </div>
+
+    <!-- Liability Information -->
+    	<!-- <div class="liability-div text-center">
+        	<h3>Liability Information:</h3>
+        	<h4 class = "liability-info">Total Monthly Liabilities: ${{ borrower.liability_info.total_monthly_liability}}
+    		</h4>
+    	</div> -->
+    <div class="flip"> 
+        <div class="card"> 
+            <div class="face front"> 
+                <div>Liability Info</div>
+            </div>
+                <div class="face back">
+                    <div class="liability-div text-center">
+                        <h3>Liability Information:</h3>
+                        <h4 class = "liability-info">Total Monthly Liabilities: ${{ borrower.liability_info.total_monthly_liability}}
+                        </h4>
+                    </div>
+                </div> 
+        </div> 
+    </div>
+
 </section>
 
     <section class="see-if-qualifi-button">
         <button class="qualifi-button" type="button" ng-click="redirectToQualifi()">Get Qualifi'd
         </button>
     </section>
+
+

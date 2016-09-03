@@ -113,6 +113,11 @@ angular.module('BorrowerInfo')
         console.log({id: $routeParams.id});
         window.location.assign('/');
         };
+      /* card flip */
+      $(".flip").hover(function(){
+        $(this).find(".card").toggleClass("flipped");
+        return false;
+      });
 });
 
 angular.module('BorrowerInfo')
