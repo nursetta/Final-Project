@@ -1,53 +1,65 @@
 <!-- Liability-info Form -->
 <div class="container profile-background">
     <section>
-        <h3 class="text-center">This is the liability section of your app.</h3> 
+        <h3 class="text-center">This is the liability section of your app. Please list the name of the institution you borrowed money from and the monthly payment due to them.</h3> 
 
-        <h4 class="text-center">...</h4>
+        <h4 class="text-center">If you have less than 2 months worth of payments to an institution you can exclude it from this application.</h4>
     </section>
 
     <form class="liability-info text-center" ng-submit="update()" ng-controller="BorrowerLiabilityUpdateCtrl">
 
         <div class="input">
+            <label class="text-center col-sm-6 col-sm-offset-3"> Name of Debtor: </label>
             <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.name_of_debtor1" placeholder="Name of Debtor" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
-            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.monthly_payment1" placeholder="Monthly Debt Payment" ng-change="calcTotalLiabilities()" /><br><br>
+            <label class="text-center col-sm-6 col-sm-offset-3"> Monthly Payment Due: </label>
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.monthly_payment1" placeholder="Monthly Payment Due" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
+            <label class="text-center col-sm-6 col-sm-offset-3"> Name of Debtor: </label>
             <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.name_of_debtor2" placeholder="Name of Debtor" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
-            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.monthly_payment2" placeholder="Monthly Debt Payment" ng-change="calcTotalLiabilities()" /><br><br>
+            <label class="text-center col-sm-6 col-sm-offset-3"> Monthly Payment Due: </label>
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.monthly_payment2" placeholder="Monthly Payment Due" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
+            <label class="text-center col-sm-6 col-sm-offset-3"> Name of Debtor: </label>
             <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.name_of_debtor3" placeholder="Name of Debtor" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
-            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.monthly_payment3" placeholder="Monthly Debt Payment" ng-change="calcTotalLiabilities()" /><br><br>
+            <label class="text-center col-sm-6 col-sm-offset-3"> Monthly Payment Due: </label>
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.monthly_payment3" placeholder="Monthly Payment Due" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
+            <label class="text-center col-sm-6 col-sm-offset-3"> Name of Debtor: </label>
             <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.name_of_debtor4" placeholder="Name of Debtor" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
-            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.monthly_payment4" placeholder="Monthly Debt Payment" ng-change="calcTotalLiabilities()" /><br><br>
+            <label class="text-center col-sm-6 col-sm-offset-3"> Monthly Payment Due: </label>
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.monthly_payment4" placeholder="Monthly Payment Due" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
+            <label class="text-center col-sm-6 col-sm-offset-3"> Name of Debtor: </label>
             <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.name_of_debtor5" placeholder="Name of Debtor" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
-            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.monthly_payment5" placeholder="Monthly Debt Payment" ng-change="calcTotalLiabilities()" /><br><br>
+            <label class="text-center col-sm-6 col-sm-offset-3"> Monthly Payment Due: </label>
+            <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.monthly_payment5" placeholder="Monthly Payment Due" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
+            <label class="text-center col-sm-6 col-sm-offset-3"> Alimony/Child Support: </label>
             <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.alimony_child_support" placeholder="Alimony/Child-Support" ng-change="calcTotalLiabilities()" /><br><br>
         </div>
         <div class="input">
+            <label class="text-center col-sm-6 col-sm-offset-3"> Total Monthly Liabilities: </label>
             <input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.liability_info.total_monthly_liability" placeholder="Total Monthly Liabilities" /><br><br>
         </div>
 
         <div class="col-sm-12">
             <input class="page-number" type="submit" id="submit" value="Submit Income Info" /><br><br>
-            <p class="text-center page-number">6/6</p>
+            <p class="text-center page-number">6/7</p>
         </div>
 
     </form>

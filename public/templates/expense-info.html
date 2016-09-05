@@ -1,38 +1,49 @@
 <!-- Expense-info Form -->
 <div class="container profile-background">
     <section>
-        <h3 class="text-center">Welcome to the Expense section of your application! We use this </h3> 
+        <h3 class="text-center">Welcome to the Expense section of your application! We use this to get an idea of how much money you are spending each month in relation to your income.</h3> 
 
-        <h4 class="text-center">It's important to note that all of this informatin is needed on a monthly basis. i.e. monthly base income, monthly overtime income, etc. </h4>
+        <h4 class="text-center">It's important to note that all of this informatin is needed on a monthly basis just like the income section.</h4>
+
+        <h5 class="text-center">Since we are qualifying you for a new mortgage, we will take out all of the monthly expenses when giving you a qualification decision except for other expenses listed at the bottom.</h5>
     </section>
 
 	<form class="expense-info text-center" ng-submit="update()" ng-controller="BorrowerExpenseUpdateCtrl">
 
 		<div class="input">
-	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.rent_expense" placeholder="Monthly Rent" ng-change="calcTotalExpense()"/><br><br>
+	    	<label class="text-center col-sm-6 col-sm-offset-3"> Monthly Rent Expense: </label>
+	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.rent_expense" placeholder="Monthly Rent Expense" ng-change="calcTotalExpense()"/><br><br>
 	    </div>
 	    <div class="input">
+	    	<label class="text-center col-sm-6 col-sm-offset-3"> Mortgage Principle and Interest Payment: </label>
 	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.mortgage_pi" placeholder="Mortgage Principle and Interest" ng-change="calcTotalExpense()" /><br><br>
 	    </div>
 	    <div class="input">
+	    	<label class="text-center col-sm-6 col-sm-offset-3"> Other Mortgage Principle and Interest: </label>
 	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.other_mortgage_pi" placeholder="Other Mortgage Principle and Interest" ng-change="calcTotalExpense()" /><br><br>
 	    </div>
 	    <div class="input">
+	    	<label class="text-center col-sm-6 col-sm-offset-3"> Hazard Insurance: </label>
 	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.hazard_insurance" placeholder="Hazard Insurance" ng-change="calcTotalExpense()" /><br><br>
 	    </div>
 	    <div class="input">
+	    	<label class="text-center col-sm-6 col-sm-offset-3"> Real Estate Taxes: </label>
 	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.real_estate_taxes" placeholder="Real Estate Taxes" ng-change="calcTotalExpense()" /><br><br>
 	    </div>
 	    <div class="input">
+	    	<label class="text-center col-sm-6 col-sm-offset-3"> Mortgage Insurance: </label>
 	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.mortgage_insurance" placeholder="Mortgage Insurance" ng-change="calcTotalExpense()" /><br><br>
 	    </div>
 	    <div class="input">
+	    	<label class="text-center col-sm-6 col-sm-offset-3"> Monthly HOA Dues: </label>
 	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.hoa_dues" placeholder="HOA Dues" ng-change="calcTotalExpense()" /><br><br>
 	    </div>
 	    <div class="input">
+	    	<label class="text-center col-sm-6 col-sm-offset-3"> Other Monthly Expenses: </label>
 	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.other" placeholder="Other Monthly Expenses" ng-change="calcTotalExpense()" /><br><br>
 	    </div>
 	    <div class="input">
+	    	<label class="text-center col-sm-6 col-sm-offset-3"> Total Monthly Expenses: </label>
 	    	<input class="input text-center col-sm-6 col-sm-offset-3" type="text" ng-model="newBorrower.expense_info.total_monthly_expense" placeholder="Total Monthly Expenses" /><br><br>
 	    </div>
 

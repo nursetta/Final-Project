@@ -1,3 +1,6 @@
+body {
+  font-family: 'Nunito';
+}
 
 /* Navbar Section */
 .navbar {
@@ -6,6 +9,7 @@
     -moz-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+
 }
 
 .nav-button {
@@ -13,16 +17,16 @@
 }
 
 .navbar .navbar-header {
-   font-family: Optima;
+   font-family: 'Nunito';
 }
 
 .navbar .navbar-header h5 {
-  font-family: Optima;
+  font-family: 'Nunito';
   font-size: 30px;
 }
 
 #myNavbar {
-  font-family: Optima;
+  font-family: 'Nunito';
   font-size: 16px;
   padding: 10px 10px;
 }
@@ -39,7 +43,6 @@
     margin-right: 15px;
     margin-bottom: 0px;
     background-color: transparent;
-/*    background-image: none;*/
     border: 1px solid black;
     border-radius: 4px;
 }
@@ -56,12 +59,12 @@
 
 /* Hero Section */
 .hero {
-  background-image: url('/styles/city.jpg');
+  background-image: url('http://www.modern-house.co.uk/images/modernhouse/modern-architecture-house/architecture-home-modern-house-design1600-x-1067-182-kb-jpeg-x.jpg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   backface-visibility: hidden;
-  height: 80vh;
+  height: 100%;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -87,20 +90,25 @@
 
 .log-in-text {
     margin-top: 0px;
-    margin-bottom: 25px;
 }
 
 .log-in {
   padding: 30px 0px 30px 0px;
   margin: 0px 0px 0px 10px;
-  background: linear-gradient(135deg, rgba(30,154,67,1) 0%,rgba(126,232,147,0) 100%);
+  /*background: linear-gradient(135deg, #34495e 0%,rgba(126,232,147,0) 100%);*/
+  background-color: #B3B1B1 lighten;
+  background-image: url("/styles/dark-wood.png");
   column-width: 100%;
   margin: 0;
 }
+
 .log-in1 {
-  padding: 30px 0px 71px 0px;
+  padding: 30px 0px 38px 0px;
   margin: 0px 0px 0px 10px;
-  background: linear-gradient(135deg, rgba(30,154,67,1) 0%,rgba(126,232,147,0) 100%);
+  /*background: linear-gradient(135deg, #34495e 0%,rgba(126,232,147,0) 100%);*/
+  background-color: #B3B1B1 lighten;
+  background-image: url("/styles/dark-wood.png");
+
   column-width: 100%;
   margin: 0;
 }
@@ -108,7 +116,7 @@
 /* Profile Page */
 
 .profile-background {
-  background: linear-gradient(135deg, rgba(30,154,67,1) 0%,rgba(126,232,147,0) 100%);
+  background: linear-gradient(135deg, #34495e 0%,rgba(126,232,147,0) 100%);
 }
 
 .profile-img {
@@ -175,14 +183,10 @@
   background-color: #d6f5e0;
 }
 
-.screen-shot {
-    width: 500px;
-    height: 500px;
-}
-
 /*Card Flip Animation*/
 
 .flip {
+  font-family: 'Avenir';
   -webkit-perspective: 800;
   -ms-perspective: 800;
   -moz-perspective: 800;
@@ -190,7 +194,10 @@
    width: 400px;
    height: 300px;
    position: relative;
-   margin: 50px auto;
+   margin: 25px 5px;
+   display: inline-block;
+   text-align: center;
+
 }
 .flip .card.flipped {
   transform:rotatey(-180deg);
@@ -218,7 +225,7 @@
   height: 100%;
   position: absolute;
   z-index: 2;
-  font-family: Georgia;
+  font-family: 'Nunito';
   font-size: 3em;
   text-align: center;
   line-height: 200px;
@@ -247,5 +254,10 @@
   -moz-transform:rotatey(-180deg); /* Firefox */
   -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
   -o-transform:rotatey(-180deg); /* Opera */
+
+}
+
+.card-info {
+   text-align: center;
 
 }
