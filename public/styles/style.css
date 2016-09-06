@@ -54,7 +54,7 @@ body {
 
 @media (min-width: 768px)
 .navbar-nav>li>a {
-    padding-top: 30px;
+    padding-top: 30px;    
 }
 
 /* Hero Section */
@@ -94,7 +94,7 @@ body {
 }
 
 .log-in {
-padding: 30px 0px 188px 0px;
+  padding: 30px 0px 188px 0px;
   margin: 0px 0px 0px 10px;
   /*background: linear-gradient(135deg, #34495e 0%,rgba(126,232,147,0) 100%);*/
   background-color: #B3B1B1 lighten;
@@ -103,7 +103,18 @@ padding: 30px 0px 188px 0px;
   column-width: 100%;
   margin: 0;
 }
+@media (max-width: 900px) {
+  .log-in {
+    padding: 30px 0px 10px 0px;
+    margin: 0px 0px 0px 10px;
+    /*background: linear-gradient(135deg, #34495e 0%,rgba(126,232,147,0) 100%);*/
+    background-color: #B3B1B1 lighten;
+    background-image: url("/styles/dark-wood.png");
 
+    column-width: 100%;
+    margin: 0;
+  }
+}
 .log-in1 {
   padding: 30px 0px 38px 0px;
   margin: 0px 0px 0px 10px;
