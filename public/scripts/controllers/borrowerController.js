@@ -76,6 +76,36 @@ angular.module('BorrowerInfo')
 });
 
 // angular.module('BorrowerInfo')
+// .controller('BorrowerButtonClickCtrl', function ($scope, BorrowerService, $routeParams) {
+//    $scope.redirectToBorrower = function() { 
+//       if ($scope.borrower === undefined || null) {
+//               window.location.assign('/#/log-in/');
+//               } 
+//               else {
+//                 $scope.borrower = BorrowerService.get({id: $routeParams.id});
+//                 window.location.assign('/#/borrower/' + $scope.borrower._id);  
+//               }
+//       // $scope.redirectToQualifi = function() {    
+//       //     $scope.homePrice =  $scope.borrower.new_mortgage_info.home_price;
+//       //     $scope.loanAmount = $scope.borrower.new_mortgage_info.loan_amount;
+//       //     $scope.ltv = $scope.loanAmount/$scope.homePrice;
+//       //     $scope.debt = $scope.borrower.liability_info.total_monthly_liability;
+//       //     $scope.income = $scope.borrower.income_info.total_monthly_income;
+//       //     $scope.dti = $scope.debt/$scope.income;
+//       //     $scope.creditScore = $scope.borrower.new_mortgage_info.credit_score;
+//       //     $scope.employmentLength = $scope.borrower.employment_info.years_on_job;
+//       //     console.log($scope.employmentLength);
+//       //         if ($scope.dti > 0.45 || $scope.ltv > 0.9 || $scope.creditScore < 640 || $scope.employmentLength < 2) {
+//       //         window.location.assign('/#/no-qualifi/' + $scope.borrower._id);
+//       //         } 
+//       //         else {
+//       //           window.location.assign('/#/qualifi/' + $scope.borrower._id);  
+//       //         }
+//       // };
+// };
+// });
+
+// angular.module('BorrowerInfo')
 // .controller('QualifyButtonClickCtrl', function ($scope, BorrowerService, $routeParams) {
 //   $scope.borrower = BorrowerService.get({id: $routeParams.id});
 //     console.log($scope.borrower);  
@@ -108,11 +138,11 @@ angular.module('BorrowerInfo')
                 window.location.assign('/#/qualifi/' + $scope.borrower._id);  
               }
       };
-      $scope.delete = function() {
-        BorrowerService.delete({id: $routeParams.id});
-        console.log({id: $routeParams.id});
-        window.location.assign('/');
-        };
+      // $scope.delete = function() {
+      //   BorrowerService.delete({id: $routeParams.id});
+      //   console.log({id: $routeParams.id});
+      //   window.location.assign('/');
+      //   };
       /* card flip */
       $(".flip").hover(function(){
         $(this).find(".card").toggleClass("flipped");
